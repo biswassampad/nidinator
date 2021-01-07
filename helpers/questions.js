@@ -1,12 +1,19 @@
 const inquirer = require('inquirer');
 
+exports.baseQuestion = () => {
+    const question = [{
+        name: "PROJECT_NAME",
+        type: "input",
+        message: "Name of your project ? "
+    }, ]
+
+    return inquirer.prompt(question);
+}
+
+
+
 exports.askQuestions = () => {
     const questions = [{
-            name: "PROJECT_NAME",
-            type: "input",
-            message: "Name of your project ? "
-        },
-        {
             type: "list",
             name: "BASE_FRAMEWORK",
             message: "Which of the framework you want to work with ?",
